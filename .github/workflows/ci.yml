@@ -1,23 +1,21 @@
-name: Calculator CI Pipeline
+name: Calculator CI/CD Pipeline
 
 on:
   push:
     branches:
       - main
 
-  pull_request:
-    branches:
-      - main
-
 jobs:
-  test-and-build:
+  test-build-push:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -25,11 +23,20 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Unit Tests
+      - name: Run Tests
         run: npm test
 
       - name: Run ESLint
         run: npx eslint .
 
       - name: Build Docker Image
-        run: docker build -t calculator-app .
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/multi-stage-docker-calculator:latest .
+
+      - name: Login to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push Docker Image
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/multi-stage-docker-calculator:latest
