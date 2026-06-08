@@ -224,11 +224,11 @@ function evaluatePostfix(postfix) {
                 case 'sin':
                     stack.push(Math.sin(val * Math.PI / 180)); // Degrees standard
                     break;
-                case 'cos':
-                    // Fix exact cos(90) = 0 precision
+                case 'cos': {
                     const cosVal = Math.cos(val * Math.PI / 180);
                     stack.push(Math.abs(cosVal) < 1e-15 ? 0 : cosVal);
                     break;
+                }
                 case 'tan':
                     if (Math.abs((val - 90) % 180) < 1e-9) throw new Error("Math Error");
                     stack.push(Math.tan(val * Math.PI / 180));
@@ -660,7 +660,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const previewVal = evaluate(previewExpr);
                 mainDisplay.innerText = previewVal.toString();
                 displayContainer.classList.add("live-preview-active");
-            } catch (e) {
+            } catch {
                 // Keep the current expression showing but don't flag as active preview
                 displayContainer.classList.remove("live-preview-active");
             }
@@ -708,7 +708,7 @@ document.addEventListener("DOMContentLoaded", () => {
         emptyHistoryMsg.style.display = "none";
         clearHistoryBtn.style.display = "block";
         
-        history.forEach((item, index) => {
+        history.forEach((item) => {
             const li = document.createElement("li");
             li.className = "history-item";
             li.innerHTML = `
