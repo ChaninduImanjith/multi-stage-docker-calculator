@@ -258,7 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sunIcon             = themeToggle.querySelector('.sun-icon');
     const moonIcon            = themeToggle.querySelector('.moon-icon');
     const scientificToggle    = document.getElementById('scientificToggle');
-    const scientificPanel     = document.getElementById('scientificPanel');
     const historyToggle       = document.getElementById('historyToggle');
     const historyDrawer       = document.getElementById('historyDrawer');
     const closeHistory        = document.getElementById('closeHistory');
