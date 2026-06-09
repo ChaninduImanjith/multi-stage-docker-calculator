@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateDisplay(formatted, currentExpr + ' =');
                 currentExpr = formatted;
                 isResultDisplayed = true;
-            } catch (err) {
+            } catch {
                 updateDisplay('Error', currentExpr);
                 currentExpr = '';
                 isResultDisplayed = false;
