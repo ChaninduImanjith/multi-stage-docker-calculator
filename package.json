@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "browser-sync start --server public --port 9090 --files 'public/**/*' --no-notify"
   },
   "keywords": [],
   "author": "",
