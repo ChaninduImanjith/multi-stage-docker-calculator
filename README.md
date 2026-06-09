@@ -1,6 +1,9 @@
 # Multi-Stage Docker Calculator
 
 A production-ready calculator application built using JavaScript, Jest, ESLint, Multi-Stage Docker, Nginx and GitHub Actions CI/CD.
+<img width="628" height="611" alt="image" src="https://github.com/user-attachments/assets/9efd3333-65be-4d01-b38a-8984db0d874f" />
+
+
 
 ## Features
 
