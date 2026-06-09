@@ -76,6 +76,27 @@ GitHub Actions automatically:
 - Builds Docker Image
 - Pushes Docker Image to Docker Hub
 
+## Architecture
+
+```text
+Browser
+   │
+   ▼
+Nginx Container
+   │
+   ▼
+JavaScript Calculator Engine
+   │
+   ▼
+Jest Unit Tests
+   │
+   ▼
+GitHub Actions CI/CD
+   │
+   ▼
+Docker Hub
+```
+
 ## Author
 
 Chanindu Imanjith
