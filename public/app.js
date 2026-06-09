@@ -265,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyHistoryMsg     = document.getElementById('emptyHistoryMsg');
     const clearHistoryBtn     = document.getElementById('clearHistoryBtn');
     const soundToggle         = document.getElementById('soundToggle');
-    const clickSound          = document.getElementById('clickSound');
 
     // --- State ---
     let currentExpr       = '';
