@@ -1,20 +1,73 @@
-# Calculator App
+# Multi-Stage Docker Calculator
 
-Industry Level Calculator Application
+A production-ready calculator application built using JavaScript, Jest, ESLint, Multi-Stage Docker, Nginx and GitHub Actions CI/CD.
 
 ## Features
 
-- Addition
-- Subtraction
-- Multiplication
-- Division
+- Basic Arithmetic Operations
+- Scientific Functions
+- Calculation History
+- Dark/Light Theme
+- Keyboard Support
+- Responsive UI
 
-## Testing
+## Technologies Used
 
+- JavaScript
+- Jest
+- ESLint
+- Docker
+- Nginx
+- GitHub Actions
+
+## Run Locally
+
+### Clone Repository
+
+```bash
+git clone <your-repository-url>
+cd multi-stage-docker-calculator
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Tests
+
+```bash
 npm test
+```
 
-## Docker
+### Run ESLint
 
+```bash
+npx eslint .
+```
+
+### Build Docker Image
+
+```bash
 docker build -t calculator-app .
+```
 
-docker run -p 8080:80 calculator-app
+### Run Container
+
+```bash
+docker run -d -p 9090:80 calculator-app
+```
+
+## CI/CD Pipeline
+
+GitHub Actions automatically:
+
+- Runs Unit Tests
+- Runs ESLint
+- Builds Docker Image
+- Pushes Docker Image to Docker Hub
+
+## Author
+
+Chanindu Imanjith
