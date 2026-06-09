@@ -1,5 +1,10 @@
 # Multi-Stage Docker Calculator
 
+![CI](https://img.shields.io/badge/CI-Passing-brightgreen)
+![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 A production-ready calculator application built using JavaScript, Jest, ESLint, Multi-Stage Docker, Nginx and GitHub Actions CI/CD.
 <img width="628" height="611" alt="image" src="https://github.com/user-attachments/assets/9efd3333-65be-4d01-b38a-8984db0d874f" />
 
